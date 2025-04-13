@@ -1,0 +1,3 @@
+"""
+Transformer comparison project package.
+"""
