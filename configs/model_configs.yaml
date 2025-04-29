@@ -1,0 +1,18 @@
+# Model parameters
+vocab_size: 30000
+d_model: 512
+num_heads: 8
+num_layers: 6
+d_ff: 2048
+max_seq_len: 512
+dropout: 0.1
+
+# Training parameters
+batch_size: 32
+num_epochs: 10
+learning_rate: 0.0001
+
+# Data parameters
+train_stride: 256
+val_stride: 256
+num_workers: 4 
