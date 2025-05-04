@@ -1,0 +1,40 @@
+model:
+  vocab_size: 32000
+  d_model: 512
+  num_heads: 8
+  num_layers: 6
+  d_ff: 2048
+  max_seq_len: 512
+  dropout: 0.1
+
+training:
+  num_epochs: 10
+  batch_size: 32
+  learning_rate: 1e-4
+  warmup_steps: 1000
+  weight_decay: 0.01
+  gradient_clip_val: 1.0
+
+data:
+  train_path: "data/train.txt"
+  val_path: "data/val.txt"
+  test_path: "data/test.txt"
+
+attention_config:
+  dot_product:
+    dropout: 0.1
+  linear:
+    dropout: 0.1
+    feature_dim: 64
+  sparse:
+    dropout: 0.1
+    num_landmarks: 32
+  local:
+    dropout: 0.1
+    window_size: 128
+  gqa:
+    dropout: 0.1
+    num_key_value_heads: 2
+  flash:
+    dropout: 0.1
+    softmax_scale: null  # Will be set to 1/sqrt(head_dim) 
